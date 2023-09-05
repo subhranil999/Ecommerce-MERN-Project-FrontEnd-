@@ -26,6 +26,20 @@ const userNavigation = [
   { name: 'Sign out', link: '/logout' },
 ];
 
+const navigationMobile = [
+  { name: 'All Products', href: '/', current: true },
+  { name: 'Fashion', href: '/', current: false },
+  { name: 'Electronic', href: '/', current: false },
+  { name: 'Home & Kitchen', href: '/', current: false },
+  { name: 'Customer Service', href: '/', current: false },
+];
+
+const userNavigationMobile = [
+  { name: 'My Profile', href: '/profile'},
+  { name: 'My Orders', href: '/orders'},
+  { name: 'Sign out', href: '/logout'}
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -148,9 +162,29 @@ function NavBar({ children }) {
                       </Menu>
                     </div>
                   </div>
+
+                  
                  
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
+                    <div>
+                  <Link to="/cart">
+                      <button
+                        type="button"
+                        className="flex absolute -ml-9 mt-2 placeholder-gray-500 rounded-full bg-gray-800 p-1 text-gray-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        <ShoppingCartIcon
+                          className="h-7 w-7"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </Link>
+                    {items.length > 0 && (
+                        <span className="inline-flex mr-5 mb-7 items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                        {items.length}
+                      </span>
+                    )}
+                  </div>
                     <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -168,10 +202,10 @@ function NavBar({ children }) {
                   </div>
                 </div>
               </div>
-
+              
               <Disclosure.Panel className="md:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                  {navigation.map((item) => (
+                  {navigationMobile.map((item) => (
                     <Disclosure.Button
                       key={item.name}
                       as="a"
@@ -206,25 +240,10 @@ function NavBar({ children }) {
                         {userInfo.email}
                       </div>
                     </div>
-                    <Link to="/cart">
-                      <button
-                        type="button"
-                        className="absolute ml-8 -mt-4 flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                      >
-                        <ShoppingCartIcon
-                          className="h-7 w-7"
-                          aria-hidden="true"
-                        />
-                      </button>
-                    </Link>
-                    {items.length > 0 && (
-                      <span className="absolute inline-flex items-center rounded-md bg-red-50 mb-7 ml-40 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                        {items.length}
-                      </span>
-                    )}
+                    
                   </div>
                   <div className="mt-3 space-y-1 px-2">
-                    {userNavigation.map((item) => (
+                    {userNavigationMobile.map((item) => (
                       <Disclosure.Button
                         key={item.name}
                         as="a"
