@@ -171,7 +171,7 @@ function NavBar({ children }) {
                   <Link to="/cart">
                       <button
                         type="button"
-                        className="flex absolute -ml-9 mt-2 placeholder-gray-500 rounded-full bg-gray-800 p-1 text-gray-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        className="flex absolute -ml-10 mt-1 placeholder-gray-500 rounded-full bg-gray-800 p-1 text-gray-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       >
                         <ShoppingCartIcon
                           className="h-7 w-7"
@@ -180,7 +180,7 @@ function NavBar({ children }) {
                       </button>
                     </Link>
                     {items.length > 0 && (
-                        <span className="inline-flex mr-5 mb-7 items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                        <span className="inline-flex mr-5 mb-6 items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
                         {items.length}
                       </span>
                     )}
