@@ -6,7 +6,7 @@ Ecommerce Web-App : https://ecommerce-webapp-4qap.onrender.com
 
 🔥 Code Repositories:
 - React [frontend] - https://github.com/subhranil999/Ecommerce-MERN-Project-FrontEnd-
-- Node [backend] - https://github.com/subhranil999/Ecommerce-MERN-Project
+- Node [backend] - https://github.com/subhranil999/Ecommerce-MERN-Project-BackEnd-
   
 ## Available Scripts
 
